@@ -10,11 +10,13 @@ function App() {
 
   
 
-  const addEventHandler = async (eventName, eventDescription) => {
+  const addEventHandler = async (eventName, eventDescription, eventStartDate, eventEndDate) => {
     
       const newEvent = {
         title: eventName,
-        description: eventDescription
+        description: eventDescription,
+        startDate: eventStartDate,
+        endDate: eventEndDate
       };
       setLoadedEvents(prevEvents => {
         return prevEvents.concat({
