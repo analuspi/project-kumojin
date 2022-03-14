@@ -1,18 +1,4 @@
-.eventForm {
-    display: flex;
-    flex-direction: column;
-}
-
-.eventForm__form {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    background-color: #5FE2DC;
-    border-radius: 10px;
-    padding: 15px;
-}
-
-.eventForm__btn {
+.button {
     color: white; 
     outline: none;
     background: #E93B6F;
@@ -31,9 +17,7 @@
 
 
  
-  .eventForm__btn:hover{
+  .button:hover{
       background-color: white;
       color: #5FE2DC;
   }
-  
-
