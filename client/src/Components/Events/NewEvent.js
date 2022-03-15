@@ -1,34 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import Input from '../Input/Input';
-import Button from '../Button/Button';
-import './NewEvent.css';
+import Input from "../Input/Input";
+import Button from "../Button/Button";
+import "./NewEvent.css";
 
-const NewEvent = props => {
-  const [enteredTitle, setEnteredTitle] = useState('');
-  const [enteredDescription, setEnteredDescription] = useState('');
-  const [enteredStartDate, setEnteredStartDate] = useState('');
-  const [enteredEndDate, setEnteredEndDate] = useState('');
+const NewEvent = (props) => {
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredDescription, setEnteredDescription] = useState("");
+  const [enteredStartDate, setEnteredStartDate] = useState("");
+  const [enteredEndDate, setEnteredEndDate] = useState("");
 
-  const titleChangeHandler = e => {
+  const titleChangeHandler = (e) => {
     setEnteredTitle(e.target.value);
   };
 
-  const descriptionChangeHandler = e => {
+  const descriptionChangeHandler = (e) => {
     setEnteredDescription(e.target.value);
   };
 
-  const startDateChangeHandler = e => {
+  const startDateChangeHandler = (e) => {
     setEnteredStartDate(e.target.value);
   };
-  const endDateChangeHandler = e => {
+  const endDateChangeHandler = (e) => {
     setEnteredEndDate(e.target.value);
   };
 
-
-  const submitEventHandler = e => {
+  const submitEventHandler = (e) => {
     e.preventDefault();
-    props.onAddEvent(enteredTitle, enteredDescription, enteredStartDate, enteredEndDate);
+
+    props.onAddEvent(
+      enteredTitle,
+      enteredDescription,
+      enteredStartDate,
+      enteredEndDate
+    );
+    setEnteredTitle("");
+    setEnteredDescription("");
   };
 
   return (
@@ -37,6 +44,7 @@ const NewEvent = props => {
       <form onSubmit={submitEventHandler}>
         <Input
           type="text"
+          maxLength={32}
           label="Title"
           id="title"
           value={enteredTitle}
@@ -49,14 +57,14 @@ const NewEvent = props => {
           value={enteredDescription}
           onChange={descriptionChangeHandler}
         />
-         <Input
+        <Input
           type="date"
           label="Start Date"
           id="startDate"
           value={enteredStartDate}
           onChange={startDateChangeHandler}
         />
-         <Input
+        <Input
           type="date"
           label="End Date"
           id="endDate"

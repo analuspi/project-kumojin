@@ -7,6 +7,7 @@ const Input = props => {
       <label htmlFor={props.id}>{props.label}</label>
       <input
         type={props.type}
+        maxLength={props.maxLength}
         id={props.id}
         value={props.value}
         onChange={props.onChange}
