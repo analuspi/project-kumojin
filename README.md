@@ -1,6 +1,5 @@
-# project-kumojin
 
-Little full-stack application for create events and list them.
+Fullstack application for creating and list events.
 
 ## Front-end: React
 ## Backend: Express
